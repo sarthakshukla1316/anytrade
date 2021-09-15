@@ -38,7 +38,7 @@ app.listen(PORT, () => console.log(`Server successfully running on PORT ${PORT}`
 
 
 // Default Data to Database
-DefaultData();
+// DefaultData();
 
 
 export let paytmMerchantKey = process.env.PAYTM_MERCHANT_KEY;
