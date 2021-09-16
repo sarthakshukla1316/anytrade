@@ -8,6 +8,8 @@ import Connection from './database/db.js';   // Components
 import DefaultData from './default.js';
 import Routes from './routes/routes.js';
 
+import path from 'path';
+
 dotenv.config();
 
 const app = express();
@@ -19,6 +21,11 @@ app.use(cors());
 
 
 app.use('/', Routes);
+
+app.use(express.static('public'));
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
+})
 
 
 const PORT = process.env.PORT || 8000;
